@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/15 14:26:10 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/21 10:41:41 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ NAME		= so_long
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 INCLUDES	= -Iincludes -I./libft/includes
+
+#MINILIBX
+MLX_FLAGS = -lmlx -lXext -lX11 -lm
 
 # Librairy
 LIBFT 		= ./libft/libft.a
@@ -49,7 +52,7 @@ $(OBJ_DIR)/%.o: srcs/%.c
 	@echo "$(GREEN)✓$(RESET) Compiled: $(CYAN)$<$(RESET)"
 
 $(NAME): $(LIBFT) $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
 	@echo "$(GREEN)==========================================$(RESET)"
 	@echo "$(GREEN)✓ $(NAME) created successfully!$(RESET)"
 	@echo "$(GREEN)==========================================$(RESET)"
