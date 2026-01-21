@@ -6,8 +6,16 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/15 14:29:18 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/21 13:21:28 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
+typedef struct	s_data
+{
+
+}	t_data;
+
+#endif
