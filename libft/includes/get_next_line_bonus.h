@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 18:00:04 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/21 11:31:33 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/21 14:10:17 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #  define BUFFER_SIZE 10
 # endif
 
-char	*get_next_line(int fd);
 char	*alloc_and_read(int fd, int *bytes_read);
 
 #endif
