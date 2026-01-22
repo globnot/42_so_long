@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:10:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 11:44:38 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/22 12:24:37 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,20 @@ int	contain_collectible(char **map)
 	if (count >= 1)
 		return (1);
 	return (0);
+}
+
+int	is_rectangular(char **map)
+{
+	int		i;
+	size_t	ref_len;
+
+	i = 0;
+	ref_len = ft_strlen(map[i]);
+	while (map[i] != NULL)
+	{
+		if (ft_strlen(map[i]) != ref_len)
+			return (0);
+		i++;
+	}
+	return (1);
 }
