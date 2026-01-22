@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 11:43:17 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/22 11:44:52 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	**init_map(char *file, int count);
 //VALIDATION
 int		contain_exit(char **map);
 int		contain_start(char **map);
+int		contain_collectible(char **map);
 
 //UTILS
 int		count_line(char *file);

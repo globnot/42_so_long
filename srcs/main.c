@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 11:42:53 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/22 11:45:05 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 		map = init_map(file, count);
 		if (map == NULL)
 			return (1);
-		validation = contain_start(map);
+		validation = contain_collectible(map);
 		ft_printf("VALIDATION: %d\n", validation);
 		free_map(map);
 		return (0);
