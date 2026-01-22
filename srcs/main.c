@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 10:45:05 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/22 10:59:00 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 	char	*file;
 	char	**map;
 
-	file = "srcs/map/map_valid.ber";
+	file = "maps/map_valid.ber";
 	count = count_line(file);
 	map = init_map(file, count);
 	if (map == NULL)
