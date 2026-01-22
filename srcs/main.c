@@ -6,30 +6,30 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 10:59:00 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/22 11:33:29 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	int		count;
-	int		i;
 	char	*file;
 	char	**map;
+	int		validation;
 
-	file = "maps/map_valid.ber";
-	count = count_line(file);
-	map = init_map(file, count);
-	if (map == NULL)
-		return (1);
-	i = 0;
-	while (i < count)
+	if (ac == 2)
 	{
-		ft_printf("%s", map[i]);
-		i++;
+		file = av[1];
+		count = count_line(file);
+		map = init_map(file, count);
+		if (map == NULL)
+			return (1);
+		validation = contain_exit(map);
+		ft_printf("VALIDATION: %d\n", validation);
+		free_map(map);
+		return (0);
 	}
-	free_map(map);
-	return (0);
+	return (1);
 }
