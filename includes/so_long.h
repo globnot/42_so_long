@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 10:22:08 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/22 10:49:02 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,12 @@ typedef struct s_data
 {
 	char		**map;
 }	t_data;
+
+//MAP
+char	**init_map(char *file, int count);
+
+//UTILS
+int		count_line(char *file);
+void	free_map(char **map);
 
 #endif

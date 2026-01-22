@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 10:45:05 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/22 10:44:44 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/22 10:50:43 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(void)
+int	count_line(char *file)
 {
+	int		fd;
 	int		count;
-	int		i;
-	char	*file;
-	char	**map;
+	char	*current_line;
 
-	file = "srcs/map/map_valid.ber";
-	count = count_line(file);
-	map = init_map(file, count);
-	if (map == NULL)
-		return (1);
-	i = 0;
-	while (i < count)
+	fd = open(file, O_RDONLY);
+	current_line = get_next_line(fd);
+	count = 0;
+	while (current_line != NULL)
 	{
-		ft_printf("%s", map[i]);
+		count++;
+		free(current_line);
+		current_line = get_next_line(fd);
+	}
+	close(fd);
+	return (count);
+}
+
+void	free_map(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i] != NULL)
+	{
+		free(map[i]);
 		i++;
 	}
-	free_map(map);
-	return (0);
+	free(map);
 }

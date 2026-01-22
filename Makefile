@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/21 10:41:41 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/22 10:56:21 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ LIBFT 		= ./libft/libft.a
 OBJ_DIR		= objs
 
 # Sources
-SRCS		= srcs/main.c
+SRCS		= srcs/main.c \
+			  srcs/map/map.c \
+			  srcs/utils/utils.c
 
 # Objects
 OBJS		= $(SRCS:srcs/%.c=$(OBJ_DIR)/%.o)
@@ -47,7 +49,7 @@ $(LIBFT):
 	@make -C libft
 
 $(OBJ_DIR)/%.o: srcs/%.c
-	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	@echo "$(GREEN)✓$(RESET) Compiled: $(CYAN)$<$(RESET)"
 

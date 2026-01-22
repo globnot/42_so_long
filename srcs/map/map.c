@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/22 10:45:05 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/22 10:43:38 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/22 10:48:31 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(void)
+char	**init_map(char *file, int count)
 {
-	int		count;
+	int		fd;
 	int		i;
-	char	*file;
-	char	**map;
+	char	*current_line;
+	char	**map_array;
 
-	file = "srcs/map/map_valid.ber";
-	count = count_line(file);
-	map = init_map(file, count);
-	if (map == NULL)
-		return (1);
+	map_array = malloc(sizeof(char *) * (count + 1));
+	if (map_array == NULL)
+		return (NULL);
+	fd = open(file, O_RDONLY);
+	current_line = get_next_line(fd);
 	i = 0;
-	while (i < count)
+	while (current_line != NULL)
 	{
-		ft_printf("%s", map[i]);
+		map_array[i] = current_line;
 		i++;
+		current_line = get_next_line(fd);
 	}
-	free_map(map);
-	return (0);
+	close(fd);
+	map_array[i] = NULL;
+	return (map_array);
 }
