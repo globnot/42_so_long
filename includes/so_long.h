@@ -6,14 +6,14 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/21 13:56:22 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/22 10:22:08 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "libft.h"
+# include "libft.h"
 
 typedef struct s_data
 {
