@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 10:43:38 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/25 10:29:26 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/25 11:42:58 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ char	**init_map(char *file, int nb_line)
 	if (map_array == NULL)
 		return (NULL);
 	fd = open(file, O_RDONLY);
-	current_line = get_next_line(fd);
+	current_line = ft_strtrim(get_next_line(fd), "\n");
 	i = 0;
 	while (current_line != NULL)
 	{
 		map_array[i] = current_line;
 		i++;
-		current_line = get_next_line(fd);
+		current_line = ft_strtrim(get_next_line(fd), "\n");
 	}
 	close(fd);
 	map_array[i] = NULL;

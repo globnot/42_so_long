@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 10:13:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/25 11:13:18 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/25 11:49:51 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int	is_closed_by_walls(char **map, int nb_line)
 	i = 0;
 	while (map[0][i])
 	{
-		if (map[0][i] != '1' && map[0][i] != '\n')
+		if (map[0][i] != '1')
 			return (0);
 		i++;
 	}
 	i = 0;
 	while (map[nb_line - 1][i])
 	{
-		if (map[nb_line - 1][i] != '1' && map[nb_line - 1][i] != '\n')
+		if (map[nb_line - 1][i] != '1')
 			return (0);
 		i++;
 	}
@@ -51,7 +51,7 @@ int	is_closed_by_walls(char **map, int nb_line)
 	line_len = ft_strlen(map[i]);
 	while (map[i])
 	{
-		if (map[i][0] != '1' && map[i][line_len] != '1')
+		if (map[i][0] != '1' || map[i][line_len - 1] != '1')
 			return (0);
 		i++;
 	}
