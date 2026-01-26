@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/25 10:31:09 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 12:54:35 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 # include "libft.h"
 
-typedef struct s_data
+typedef struct s_map
 {
-	char		**map;
-}	t_data;
+	int		fd;
+	int		nb_line;
+	int		lin_len;
+	char	**map_array;
+}	t_map;
 
 //MAP
-char	**init_map(char *file, int nb_lines);
+t_map	*init_t_map(char *file);
+int		init_nb_line(t_map *map);
+int		init_map(t_map *map);
 
 //VALIDATION
 int		contain_exit(char **map);
@@ -31,7 +36,6 @@ int		is_rectangular(char **map);
 int		is_closed_by_walls(char **map, int nb_line);
 
 //UTILS
-int		count_line(char *file);
 void	free_map(char **map);
 
 #endif

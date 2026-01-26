@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/25 12:22:55 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 12:37:44 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 int	main(int ac, char **av)
 {
-	int		nb_line;
-	char	*file;
-	char	**map;
+	t_map	*map;
 	int		validation;
 
 	if (ac == 2)
 	{
-		file = av[1];
-		nb_line = count_line(file);
-		if (nb_line == -1)
-			return (1);
-		map = init_map(file, nb_line);
+		map = init_t_map(av[1]);
 		if (map == NULL)
+		{
+			ft_printf("Error init_t_map\n");
 			return (1);
-		validation = is_closed_by_walls(map, nb_line);
+		}
+
+
+
+
+		validation = is_closed_by_walls(map->map_array, map->nb_line);
 		ft_printf("VALIDATION: %d", validation);
-		free_map(map);
+		free_map(map->map_array);
 		return (0);
 	}
 	return (1);
