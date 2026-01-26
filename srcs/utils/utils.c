@@ -6,21 +6,8 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 10:44:44 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 12:10:02 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 16:22:48 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	free_map(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i] != NULL)
-	{
-		free(map[i]);
-		i++;
-	}
-	free(map);
-}

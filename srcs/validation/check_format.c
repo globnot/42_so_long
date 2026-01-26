@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 10:13:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 14:06:16 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 16:20:37 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int	is_closed_by_walls(t_map *map)
 	i = 0;
 	while (map->map_array[i])
 	{
-		if (map->map_array[i][0] != '1' || map->map_array[i][map->line_len - 1] != '1')
+		if (map->map_array[i][0] != '1'
+			|| map->map_array[i][map->line_len - 1] != '1')
 			return (0);
 		i++;
 	}

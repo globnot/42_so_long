@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 13:58:21 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 17:38:04 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_map
 t_map	*init_s_map(char *file);
 int		init_nb_line(t_map *map);
 int		init_map(t_map *map);
+int		free_map_array(t_map *map);
+int		free_map(t_map *map);
 
 //VALIDATION
 int		contain_exit(t_map *map);
@@ -36,6 +38,5 @@ int		is_rectangular(t_map *map);
 int		is_closed_by_walls(t_map *map);
 
 //UTILS
-void	free_map(char **map);
 
 #endif
