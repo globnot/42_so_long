@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 12:54:35 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 13:33:10 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_map
 }	t_map;
 
 //MAP
-t_map	*init_t_map(char *file);
+t_map	*init_s_map(char *file);
 int		init_nb_line(t_map *map);
 int		init_map(t_map *map);
 

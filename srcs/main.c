@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 12:37:44 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 13:33:29 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		map = init_t_map(av[1]);
+		map = init_s_map(av[1]);
 		if (map == NULL)
 		{
 			ft_printf("Error init_t_map\n");
