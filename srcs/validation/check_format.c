@@ -6,52 +6,48 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 10:13:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/25 12:13:07 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 14:06:16 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	is_rectangular(char **map)
+int	is_rectangular(t_map *map)
 {
 	int		i;
-	size_t	ref_len;
 
 	i = 0;
-	ref_len = ft_strlen(map[i]);
-	while (map[i] != NULL)
+	while (map->map_array[i] != NULL)
 	{
-		if (ft_strlen(map[i]) != ref_len)
+		if (ft_strlen(map->map_array[i]) != map->line_len)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	is_closed_by_walls(char **map, int nb_line)
+int	is_closed_by_walls(t_map *map)
 {
 	int		i;
-	size_t	line_len;
 
 	i = 0;
-	while (map[0][i])
+	while (map->map_array[0][i])
 	{
-		if (map[0][i] != '1')
+		if (map->map_array[0][i] != '1')
 			return (0);
 		i++;
 	}
 	i = 0;
-	while (map[nb_line - 1][i])
+	while (map->map_array[map->nb_line - 1][i])
 	{
-		if (map[nb_line - 1][i] != '1')
+		if (map->map_array[map->nb_line - 1][i] != '1')
 			return (0);
 		i++;
 	}
 	i = 0;
-	line_len = ft_strlen(map[i]);
-	while (map[i])
+	while (map->map_array[i])
 	{
-		if (map[i][0] != '1' || map[i][line_len - 1] != '1')
+		if (map->map_array[i][0] != '1' || map->map_array[i][map->line_len - 1] != '1')
 			return (0);
 		i++;
 	}

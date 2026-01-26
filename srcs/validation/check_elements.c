@@ -6,13 +6,13 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 12:43:35 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/25 10:11:57 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 13:48:01 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	contain_exit(char **map)
+int	contain_exit(t_map *map)
 {
 	int	i;
 	int	j;
@@ -20,12 +20,12 @@ int	contain_exit(char **map)
 
 	i = 0;
 	count = 0;
-	while (map[i] != NULL)
+	while (map->map_array[i] != NULL)
 	{
 		j = 0;
-		while (map[i][j])
+		while (map->map_array[i][j])
 		{
-			if (map[i][j] == 'E')
+			if (map->map_array[i][j] == 'E')
 			{
 				j++;
 				count++;
@@ -40,7 +40,7 @@ int	contain_exit(char **map)
 	return (0);
 }
 
-int	contain_start(char **map)
+int	contain_start(t_map *map)
 {
 	int	i;
 	int	j;
@@ -48,12 +48,12 @@ int	contain_start(char **map)
 
 	i = 0;
 	count = 0;
-	while (map[i] != NULL)
+	while (map->map_array[i] != NULL)
 	{
 		j = 0;
-		while (map[i][j])
+		while (map->map_array[i][j])
 		{
-			if (map[i][j] == 'P')
+			if (map->map_array[i][j] == 'P')
 			{
 				j++;
 				count++;
@@ -68,7 +68,7 @@ int	contain_start(char **map)
 	return (0);
 }
 
-int	contain_collectible(char **map)
+int	contain_collectible(t_map *map)
 {
 	int	i;
 	int	j;
@@ -76,12 +76,12 @@ int	contain_collectible(char **map)
 
 	i = 0;
 	count = 0;
-	while (map[i] != NULL)
+	while (map->map_array[i] != NULL)
 	{
 		j = 0;
-		while (map[i][j])
+		while (map->map_array[i][j])
 		{
-			if (map[i][j] == 'C')
+			if (map->map_array[i][j] == 'C')
 			{
 				j++;
 				count++;

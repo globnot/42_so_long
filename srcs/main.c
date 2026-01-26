@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 13:33:29 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/26 15:09:33 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ int	main(int ac, char **av)
 			return (1);
 		}
 
-
-
-
-		validation = is_closed_by_walls(map->map_array, map->nb_line);
+		validation = is_closed_by_walls(map);
 		ft_printf("VALIDATION: %d", validation);
 		free_map(map->map_array);
 		return (0);
