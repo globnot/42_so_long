@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 17:38:04 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/28 10:14:54 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ int		free_map_array(t_map *map);
 int		free_map(t_map *map);
 
 //VALIDATION
+int		is_valid_map(t_map *map);
+
 int		contain_exit(t_map *map);
 int		contain_start(t_map *map);
 int		contain_collectible(t_map *map);
+
 int		is_rectangular(t_map *map);
 int		is_closed_by_walls(t_map *map);
 
