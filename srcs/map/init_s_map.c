@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 10:43:38 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 11:34:04 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/28 12:07:50 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,29 +21,14 @@ t_map	*init_s_map(char *file)
 		return (NULL);
 	map->fd = open(file, O_RDONLY);
 	if (map->fd == -1)
-	{
-		free(map);
-		return (NULL);
-	}
+		return (free(map), NULL);
 	if (init_nb_line(map) == 1)
-	{
-		close(map->fd);
-		free(map);
-		return (NULL);
-	}
+		return (close(map->fd), free(map), NULL);
 	map->fd = open(file, O_RDONLY);
 	if (map->fd == -1)
-	{
-		close(map->fd);
-		free(map);
-		return (NULL);
-	}
+		return (close(map->fd), free(map), NULL);
 	if (init_map(map) == 1)
-	{
-		close(map->fd);
-		free(map);
-		return (NULL);
-	}
+		return (close(map->fd), free(map), NULL);
 	map->line_len = ft_strlen(map->map_array[0]);
 	return (map);
 }
@@ -54,10 +39,7 @@ int	init_nb_line(t_map *map)
 
 	current_line = get_next_line(map->fd);
 	if (current_line == NULL)
-	{
-		close(map->fd);
-		return (1);
-	}
+		return (close(map->fd), 1);
 	map->nb_line = 0;
 	while (current_line != NULL)
 	{
