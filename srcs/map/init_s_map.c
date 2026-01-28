@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 10:43:38 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/26 17:38:06 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/28 11:34:04 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,62 +66,5 @@ int	init_nb_line(t_map *map)
 		current_line = get_next_line(map->fd);
 	}
 	close(map->fd);
-	return (0);
-}
-
-int	free_map_array(t_map *map)
-{
-	int	i;
-
-	i = 0;
-	while (map->map_array[i] != NULL)
-	{
-		free(map->map_array[i]);
-		i++;
-	}
-	free(map->map_array);
-	return (1);
-}
-
-int	free_map(t_map *map)
-{
-	free_map_array(map);
-	free(map);
-	return (1);
-}
-
-int	init_map(t_map *map)
-{
-	int		i;
-	char	*current_line;
-	char	*trimed_current_line;
-
-	map->map_array = malloc(sizeof(char *) * (map->nb_line + 1));
-	if (map->map_array == NULL)
-		return (1);
-	current_line = get_next_line(map->fd);
-	if (current_line == NULL)
-		return (free(current_line), free_map_array(map));
-	trimed_current_line = ft_strtrim(current_line, "\n");
-	if (trimed_current_line == NULL)
-		return (free(current_line), free_map_array(map));
-	free(current_line);
-	i = 0;
-	while (current_line != NULL)
-	{
-		map->map_array[i] = trimed_current_line;
-		i++;
-		current_line = get_next_line(map->fd);
-		if (current_line == NULL)
-			break ;
-		trimed_current_line = ft_strtrim(current_line, "\n");
-		if (trimed_current_line == NULL)
-			return (free(current_line), free_map_array(map));
-		free(current_line);
-	}
-	close(map->fd);
-	map->map_array[i] = NULL;
-	if (i != map->nb_line)
-		return (free_map_array(map));
 	return (0);
 }

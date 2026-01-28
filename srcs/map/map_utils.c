@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.h                                           :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 10:19:02 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 11:25:23 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/28 11:33:22 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/28 11:34:51 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#include "so_long.h"
 
-# define ERR_OK 0
-# define ERR_MALLOC 1
-# define ERR_MAP_ELEMENTS 11
-# define ERR_MAP_FORMAT 12
+int	free_map_array(t_map *map)
+{
+	int	i;
 
-int	error_msg(int err_code);
+	i = 0;
+	while (map->map_array[i] != NULL)
+	{
+		free(map->map_array[i]);
+		i++;
+	}
+	free(map->map_array);
+	return (1);
+}
 
-#endif
+int	free_map(t_map *map)
+{
+	free_map_array(map);
+	free(map);
+	return (1);
+}
