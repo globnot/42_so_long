@@ -13,10 +13,11 @@ echo -e "${G}=======================================${NC}"
 # Test 1 : Map valide
 echo -e "\n${B}MAP VALIDE${NC}"
 RESULT=$(./so_long "maps/map_valid.ber")
+echo -e "RETURN: ${R}$?${NC}"
 echo "$RESULT"
 
 # Test 2 : Map invalide
 echo -e "\n${B}MAP INVALIDE${NC}"
 RESULT=$(./so_long "maps/map_invalid.ber")
-echo -e "$RESULT\n"
-
+echo -e "RETURN: ${R}$?${NC}"
+echo -e "$RESULT"

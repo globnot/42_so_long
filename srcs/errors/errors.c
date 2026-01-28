@@ -1,0 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/28 10:22:32 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/28 11:12:12 by aborda           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "so_long.h"
+
+int	error_msg(int err_code)
+{
+	if (err_code == ERR_OK)
+		ft_putstr_fd("OK\n", 2);
+	else if (err_code == ERR_MALLOC)
+		ft_putstr_fd("Error : malloc failed\n", 2);
+	else if (err_code == ERR_MAP_ELEMENTS)
+		ft_putstr_fd("Error : parsing map elements\n", 2);
+	else if (err_code == ERR_MAP_FORMAT)
+		ft_putstr_fd("Error : parsing map format\n", 2);
+	return (err_code);
+}

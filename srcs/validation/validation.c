@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:10:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 10:13:24 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/28 11:00:23 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 int	is_valid_map(t_map *map)
 {
 	if (!contain_exit(map))
-		return (0);
+		return (error_msg(ERR_MAP_ELEMENTS));
 	if (!contain_start(map))
-		return (0);
+		return (error_msg(ERR_MAP_ELEMENTS));
 	if (!contain_collectible(map))
-		return (0);
+		return (error_msg(ERR_MAP_ELEMENTS));
 	if (!is_rectangular(map))
-		return (0);
+		return (error_msg(ERR_MAP_FORMAT));
 	if (!is_closed_by_walls(map))
-		return (0);
-	return (1);
+		return (error_msg(ERR_MAP_FORMAT));
+	return (error_msg(ERR_OK));
 }
