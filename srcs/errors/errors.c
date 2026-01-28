@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:22:32 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 11:12:12 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/28 15:28:54 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int	error_msg(int err_code)
 	else if (err_code == ERR_MALLOC)
 		ft_putstr_fd("Error : malloc failed\n", 2);
 	else if (err_code == ERR_MAP_ELEMENTS)
-		ft_putstr_fd("Error : parsing map elements\n", 2);
+		ft_putstr_fd("Error : parsing map elements failed\n", 2);
 	else if (err_code == ERR_MAP_FORMAT)
-		ft_putstr_fd("Error : parsing map format\n", 2);
+		ft_putstr_fd("Error : parsing map format failed\n", 2);
+	else if (err_code == ERR_INIT_S_MAP)
+		ft_putstr_fd("Error : init s_map failed\n", 2);
 	return (err_code);
 }

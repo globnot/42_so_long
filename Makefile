@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/28 11:34:30 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/28 15:25:49 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ OBJ_DIR		= objs
 
 # Sources
 SRCS		= srcs/main.c \
-			  srcs/map/init_map.c \
 			  srcs/map/init_s_map.c \
 			  srcs/map/map_utils.c \
 			  srcs/utils/utils.c \
