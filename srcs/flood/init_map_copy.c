@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:17:21 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 14:07:48 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 14:20:34 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**init_map_copy(t_map *map, t_flood *flood)
 	{
 		flood->map_array_copy[i] = ft_strdup(map->map_array[i]);
 		if (flood->map_array_copy[i] == NULL)
-			return (NULL);
+			return (free_flood(flood), NULL);
 		i++;
 	}
 	return (flood->map_array_copy);
