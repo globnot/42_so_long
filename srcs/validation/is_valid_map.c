@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:10:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 23:10:10 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 09:49:58 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	is_valid_map(t_map *map)
 {
+	if (!check_valid_chars(map))
+		return (error_msg(ERR_MAP_ELEMENTS));
 	if (!contain_element(map, 'E'))
 		return (error_msg(ERR_MAP_ELEMENTS));
 	if (!contain_element(map, 'P'))
