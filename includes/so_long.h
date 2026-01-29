@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 12:46:14 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 13:05:32 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ typedef struct s_map
 	size_t	line_len;
 	char	**map_array;
 }	t_map;
+
+typedef struct s_flood
+{
+	char	**map_copy;
+	int		nb_collectible;
+	int		found_collectible;
+	int		found_exit;
+	int		player_pos_x;
+	int		player_pos_y;
+}	t_flood;
 
 //MAP
 t_map	*init_s_map(char *file);
