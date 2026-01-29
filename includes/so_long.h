@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 13:05:32 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 14:15:17 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_map
 
 typedef struct s_flood
 {
-	char	**map_copy;
+	char	**map_array_copy;
 	int		nb_collectible;
 	int		found_collectible;
 	int		found_exit;
@@ -38,15 +38,18 @@ typedef struct s_flood
 t_map	*init_s_map(char *file);
 int		init_nb_line(t_map *map);
 int		init_map(t_map *map);
-void	free_map_array(t_map *map);
+void	free_array(char **array);
 void	free_map(t_map *map);
+void	free_flood(t_flood *flood);
+
+//FLOOD
+t_flood	*init_s_flood(t_map *map);
+char	**init_map_copy(t_map *map, t_flood *flood);
 
 //VALIDATION
 int		is_valid_map(t_map *map);
-
 int		contain_element(t_map *map, char element);
 int		check_valid_chars(t_map *map);
-
 int		is_rectangular(t_map *map);
 int		is_closed_by_walls(t_map *map);
 

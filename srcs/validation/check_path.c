@@ -1,38 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   check_path.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 11:33:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 14:15:34 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/29 13:13:32 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/29 13:45:55 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	free_array(char **array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i] != NULL)
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
-}
-
-void	free_map(t_map *map)
-{
-	free_array(map->map_array);
-	free(map);
-}
-
-void	free_flood(t_flood *flood)
-{
-	free_array(flood->map_array_copy);
-	free(flood);
-}

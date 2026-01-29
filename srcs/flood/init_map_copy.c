@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_map_copy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 14:16:09 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/29 13:17:21 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/29 14:07:48 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int ac, char **av)
+char	**init_map_copy(t_map *map, t_flood *flood)
 {
-	t_map	*map;
-	// t_flood	*flood;
-	int		valid_map;
+	int		i;
 
-	if (ac == 2)
+	flood->map_array_copy = malloc(sizeof(char *) * map->nb_line + 1);
+	if (flood->map_array_copy == NULL)
+		return (free(flood), NULL);
+	i = 0;
+	while (i < map->nb_line)
 	{
-		map = init_s_map(av[1]);
-		if (map == NULL)
-			return (err_msg(ERR_INIT_S_MAP));
-		valid_map = is_valid_map(map);
-		if (valid_map != 0)
-			return (free_map(map), valid_map);
-		// flood = init_s_flood(map);
-		// if (flood == NULL)
-		// 	return (err_msg(ERR_INIT_S_FLOOD));
-		free_map(map);
-		return (err_msg(ERR_OK));
+		flood->map_array_copy[i] = ft_strdup(map->map_array[i]);
+		if (flood->map_array_copy[i] == NULL)
+			return (NULL);
+		i++;
 	}
-	return (1);
+	return (flood->map_array_copy);
 }
