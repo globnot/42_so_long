@@ -6,13 +6,13 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:22:32 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 15:28:54 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 12:42:50 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	error_msg(int err_code)
+int	err_msg(int err_code)
 {
 	if (err_code == ERR_OK)
 		ft_putstr_fd("OK\n", 2);

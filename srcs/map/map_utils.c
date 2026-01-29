@@ -6,13 +6,13 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 11:33:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 11:34:51 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 12:45:25 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	free_map_array(t_map *map)
+void	free_map_array(t_map *map)
 {
 	int	i;
 
@@ -23,12 +23,10 @@ int	free_map_array(t_map *map)
 		i++;
 	}
 	free(map->map_array);
-	return (1);
 }
 
-int	free_map(t_map *map)
+void	free_map(t_map *map)
 {
 	free_map_array(map);
 	free(map);
-	return (1);
 }

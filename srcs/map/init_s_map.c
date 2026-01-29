@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 10:43:38 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 17:39:15 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 12:48:12 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	init_map(t_map *map)
 	i = 0;
 	trimed_current_line = read_and_trimed_current_line(map);
 	if (trimed_current_line == NULL)
-		return (free_map_array(map));
+		return (free_map_array(map), 1);
 	while (trimed_current_line != NULL)
 	{
 		map->map_array[i] = trimed_current_line;
@@ -86,7 +86,7 @@ int	init_map(t_map *map)
 		if (trimed_current_line == NULL)
 		{
 			if (i != map->nb_line)
-				return (free_map_array(map));
+				return (free_map_array(map), 1);
 			break ;
 		}
 	}

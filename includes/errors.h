@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:19:02 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/28 12:09:25 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 12:40:55 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 # define ERR_MAP_FORMAT 22
 # define ERR_INIT_S_MAP 31
 
-int	error_msg(int err_code);
+int	err_msg(int err_code);
 
 #endif

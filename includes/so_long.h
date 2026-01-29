@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 09:45:49 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 12:46:14 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ typedef struct s_map
 t_map	*init_s_map(char *file);
 int		init_nb_line(t_map *map);
 int		init_map(t_map *map);
-int		free_map_array(t_map *map);
-int		free_map(t_map *map);
+void	free_map_array(t_map *map);
+void	free_map(t_map *map);
 
 //VALIDATION
 int		is_valid_map(t_map *map);
