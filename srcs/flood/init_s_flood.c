@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:50:29 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 16:11:09 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 16:34:20 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ t_flood	*init_s_flood(t_map *map)
 	flood = malloc(sizeof(t_flood));
 	if (flood == NULL)
 		return (NULL);
+	flood->found_collectible = 0;
+	flood->found_exit = 0;
+	flood->nb_line = map->nb_line;
+	flood->line_len = map->line_len;
 	if (init_map_copy(map, flood) == NULL)
 		return (free(flood), NULL);
 	if (!init_player_pos(flood, map))
 		return (free_flood(flood), NULL);
 	init_nb_collectible(flood, map);
-	flood->found_collectible = 0;
-	flood->found_exit = 0;
 	return (flood);
 }
