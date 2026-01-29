@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 15:41:01 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/29 16:10:17 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	free_flood(t_flood *flood);
 t_flood	*init_s_flood(t_map *map);
 char	**init_map_copy(t_map *map, t_flood *flood);
 int		init_player_pos(t_flood *flood, t_map *map);
+int		init_nb_collectible(t_flood *flood, t_map *map);
 
 //VALIDATION
 int		is_valid_map(t_map *map);

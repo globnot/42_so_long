@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_s_flood.c                                     :+:      :+:    :+:   */
+/*   init_nb_collectible.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 13:50:29 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 16:11:09 by aborda           ###   ########.fr       */
+/*   Created: 2026/01/29 16:06:00 by aborda            #+#    #+#             */
+/*   Updated: 2026/01/29 16:14:07 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_flood	*init_s_flood(t_map *map)
+int	init_nb_collectible(t_flood *flood, t_map *map)
 {
-	t_flood	*flood;
+	int		i;
+	size_t	j;
+	int		count;
 
-	flood = malloc(sizeof(t_flood));
-	if (flood == NULL)
-		return (NULL);
-	if (init_map_copy(map, flood) == NULL)
-		return (free(flood), NULL);
-	if (!init_player_pos(flood, map))
-		return (free_flood(flood), NULL);
-	init_nb_collectible(flood, map);
-	flood->found_collectible = 0;
-	flood->found_exit = 0;
-	return (flood);
+	i = 0;
+	count = 0;
+	while (i < map->nb_line)
+	{
+		j = 0;
+		while (j < map->line_len)
+		{
+			if (map->map_array[i][j] == 'C')
+				count++;
+			j++;
+		}
+		i++;
+	}
+	flood->nb_collectible = count;
+	return (1);
 }
