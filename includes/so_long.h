@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 15:32:23 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 16:27:38 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_flood
 
 typedef struct s_game
 {
+	char	*title;
+	int		size;
 	t_map	*map;
 	void	*mlx;
 	void	*win;

@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 14:55:35 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 16:28:49 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,26 @@
 t_game	*init_s_game(t_map *map)
 {
 	t_game	*game;
-	int		width;
-	int		height;
 
 	game = malloc(sizeof(t_game));
 	if (game == NULL)
 		return (NULL);
-	width = 16;
-	height = 16;
+	game->title = "Coquillette";
+	game->size = 16;
 	game->map = map;
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(
-			game->mlx, game->map->line_len * 16,
-			game->map->nb_line * 16, "Title");
+			game->mlx, game->map->line_len * game->size,
+			game->map->nb_line * game->size, "Title");
 	game->img_wall = mlx_xpm_file_to_image(
-			game->mlx, "textures/wall.xpm", &width, &height);
+			game->mlx, "textures/wall.xpm", &game->size, &game->size);
 	game->img_floor = mlx_xpm_file_to_image(
-			game->mlx, "textures/floor.xpm", &width, &height);
+			game->mlx, "textures/floor.xpm", &game->size, &game->size);
 	game->img_collectible = mlx_xpm_file_to_image(
-			game->mlx, "textures/collectible.xpm", &width, &height);
+			game->mlx, "textures/collectible.xpm", &game->size, &game->size);
 	game->img_exit = mlx_xpm_file_to_image(
-			game->mlx, "textures/exit.xpm", &width, &height);
+			game->mlx, "textures/exit.xpm", &game->size, &game->size);
 	game->img_player = mlx_xpm_file_to_image(
-			game->mlx, "textures/player.xpm", &width, &height);
+			game->mlx, "textures/player.xpm", &game->size, &game->size);
 	return (game);
 }
