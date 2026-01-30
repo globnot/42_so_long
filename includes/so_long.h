@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 14:53:43 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 15:32:23 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int		flood_fill(t_flood *flood, size_t player_pos_x, int player_pos_y);
 
 //GAME
 t_game	*init_s_game(t_map *map);
+int		render_map(t_game *game);
 
 //MAP
 t_map	*init_s_map(char *file);

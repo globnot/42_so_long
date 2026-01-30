@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 10:19:02 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 11:35:42 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 15:41:09 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define ERR_CHECK_PATH 23
 # define ERR_INIT_S_MAP 31
 # define ERR_INIT_S_FLOOD 32
+# define ERR_INIT_GAME 33
 
 int	err_msg(int err_code);
 

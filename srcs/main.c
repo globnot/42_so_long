@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 14:57:01 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 15:41:14 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_map	*map;
+	t_game	*game;
 	int		valid_map;
 
 	if (ac == 2)
@@ -25,8 +26,11 @@ int	main(int ac, char **av)
 		valid_map = is_valid_map(map);
 		if (valid_map != 0)
 			return (free_map(map), valid_map);
-		if (init_s_game(map) != 0)
-			return (free_map(map), 1);
+		game = init_s_game(map);
+		if (game == NULL)
+			return (free_map(map), err_msg(ERR_INIT_GAME));
+		render_map(game);
+		mlx_loop(game->mlx);
 		free_map(map);
 		return (err_msg(ERR_OK));
 	}
