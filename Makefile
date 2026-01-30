@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/30 11:23:51 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/30 14:50:44 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ SRCS		= srcs/main.c \
 			  srcs/flood/init_nb_collectible.c \
 			  srcs/flood/init_player_pos.c \
 			  srcs/flood/init_s_flood.c \
+			  srcs/game/init_game.c \
+			  srcs/game/render_map.c \
 			  srcs/map/init_map.c \
 			  srcs/map/init_nb_line.c \
 			  srcs/map/init_s_map.c \

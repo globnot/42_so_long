@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 12:34:15 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 14:53:43 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include "errors.h"
+# include <mlx.h>
 
 typedef struct s_map
 {
@@ -38,13 +39,25 @@ typedef struct s_flood
 
 typedef struct s_game
 {
+	t_map	*map;
 	void	*mlx;
 	void	*win;
-	void	*map;
-	size_t	player_pos_x;
-	int		player_pos_y;
-	int		score;
-}
+	void	*img_wall;
+	void	*img_floor;
+	void	*img_collectible;
+	void	*img_exit;
+	void	*img_player;
+}	t_game;
+
+//FLOOD
+t_flood	*init_s_flood(t_map *map);
+char	**init_map_copy(t_map *map, t_flood *flood);
+int		init_player_pos(t_flood *flood, t_map *map);
+int		init_nb_collectible(t_flood *flood, t_map *map);
+int		flood_fill(t_flood *flood, size_t player_pos_x, int player_pos_y);
+
+//GAME
+t_game	*init_s_game(t_map *map);
 
 //MAP
 t_map	*init_s_map(char *file);
@@ -53,13 +66,6 @@ int		init_map(t_map *map);
 void	free_array(char **array);
 void	free_map(t_map *map);
 void	free_flood(t_flood *flood);
-
-//FLOOD
-t_flood	*init_s_flood(t_map *map);
-char	**init_map_copy(t_map *map, t_flood *flood);
-int		init_player_pos(t_flood *flood, t_map *map);
-int		init_nb_collectible(t_flood *flood, t_map *map);
-int		flood_fill(t_flood *flood, size_t player_pos_x, int player_pos_y);
 
 //VALIDATION
 int		is_valid_map(t_map *map);
