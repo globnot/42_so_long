@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 11:10:42 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 12:41:09 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 11:39:32 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ int	is_valid_map(t_map *map)
 		return (err_msg(ERR_MAP_FORMAT));
 	if (!is_closed_by_walls(map))
 		return (err_msg(ERR_MAP_FORMAT));
+	if (!check_path(map))
+		return (err_msg(ERR_CHECK_PATH));
 	return (0);
 }

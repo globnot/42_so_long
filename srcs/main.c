@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 10:39:40 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 11:36:57 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main(int ac, char **av)
 {
 	t_map	*map;
-	t_flood	*flood;
 	int		valid_map;
 
 	if (ac == 2)
@@ -26,11 +25,7 @@ int	main(int ac, char **av)
 		valid_map = is_valid_map(map);
 		if (valid_map != 0)
 			return (free_map(map), valid_map);
-		flood = init_s_flood(map);
-		if (flood == NULL)
-			return (err_msg(ERR_INIT_S_FLOOD));
 		free_map(map);
-		free_flood(flood);
 		return (err_msg(ERR_OK));
 	}
 	return (1);

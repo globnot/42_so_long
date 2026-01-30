@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 11:10:30 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 11:45:47 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		contain_element(t_map *map, char element);
 int		check_valid_chars(t_map *map);
 int		is_rectangular(t_map *map);
 int		is_closed_by_walls(t_map *map);
+int		check_path(t_map *map);
 
 //UTILS
 
