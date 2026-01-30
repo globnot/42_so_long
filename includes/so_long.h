@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 11:45:47 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 12:34:15 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ typedef struct s_flood
 	size_t	player_pos_x;
 	int		player_pos_y;
 }	t_flood;
+
+typedef struct s_game
+{
+	void	*mlx;
+	void	*win;
+	void	*map;
+	size_t	player_pos_x;
+	int		player_pos_y;
+	int		score;
+}
 
 //MAP
 t_map	*init_s_map(char *file);

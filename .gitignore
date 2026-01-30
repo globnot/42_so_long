@@ -1,3 +1,4 @@
 *.o
 minilibx-linux
 so_long
+/gfx

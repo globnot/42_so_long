@@ -1,0 +1,28 @@
+/* XPM */
+static char *exit_door[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+". c #8B4513",
+"X c #A0522D",
+"o c #D2691E",
+"O c #000000",
+"+ c #654321",
+/* pixels */
+"OOOOOOOOOOOOOOOO",
+"O..............O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXX++++XXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O.XXXXooooXXXX.O",
+"O..............O",
+"OOOOOOOOOOOOOOOO"
+};
