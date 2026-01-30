@@ -6,13 +6,13 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 16:26:09 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 10:40:44 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/30 11:10:53 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	is_valid_pos(t_flood *flood, int player_pos_x, int player_pos_y)
+static int	is_valid_pos(t_flood *flood, size_t player_pos_x, int player_pos_y)
 {
 	if (player_pos_x > 0 && player_pos_y > 0
 		&& player_pos_x < flood->line_len && player_pos_y < flood->nb_line
@@ -22,7 +22,7 @@ static int	is_valid_pos(t_flood *flood, int player_pos_x, int player_pos_y)
 	return (0);
 }
 
-int	flood_fill(t_flood *flood, int player_pos_x, int player_pos_y)
+int	flood_fill(t_flood *flood, size_t player_pos_x, int player_pos_y)
 {
 	if (is_valid_pos(flood, player_pos_x, player_pos_y))
 	{
