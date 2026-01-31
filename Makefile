@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/01/30 14:50:44 by aborda           ###   ########.fr        #
+#    Updated: 2026/01/31 10:34:31 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,12 @@ RESET		= \033[0m
 NAME		= so_long
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
-INCLUDES	= -Iincludes -I./libft/includes
+INCLUDES	= -Iincludes -I./libft/includes -I$(MLX_DIR)
 
 #MINILIBX
-MLX_FLAGS = -lmlx -lXext -lX11 -lm
+MLX_DIR = minilibx
+MLX_LIB = $(MLX_DIR)/libmlx.a
+MLX_FLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
 # Librairy
 LIBFT 		= ./libft/libft.a
