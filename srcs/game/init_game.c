@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/31 08:57:30 by aborda           ###   ########.fr       */
+/*   Updated: 2026/01/31 11:24:47 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_game	*init_s_game(t_map *map)
 	if (game == NULL)
 		return (NULL);
 	game->title = "Coquillette";
-	game->size = 32;
+	game->size = 64;
 	game->map = map;
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(
