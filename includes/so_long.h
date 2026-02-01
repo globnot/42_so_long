@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/01 12:45:10 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/01 14:17:27 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include "libft.h"
 # include "errors.h"
 # include <mlx.h>
+# include <X11/X.h>
+# include <X11/keysym.h>
+
+# define KEY_W				119
+# define KEY_A				97
+# define KEY_S				115
+# define KEY_D				100
+
+# define KEY_ESC  			65307
 
 typedef struct s_map
 {
