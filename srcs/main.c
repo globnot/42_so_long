@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:22 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/01 14:19:06 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/01 15:15:54 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	main(int ac, char **av)
 		if (game == NULL)
 			return (free_map(map), err_msg(ERR_INIT_GAME));
 		render_map(game);
-		mlx_hook(game->win, DestroyNotify, ButtonPressMask, (int (*)())callback_cross, game);
-		mlx_hook(game->win, KeyPress, KeyPressMask, (int (*)())callback_key, game);
+		mlx_hook(game->win, DestroyNotify, ButtonPressMask, callback_cross, game);
+		mlx_hook(game->win, KeyPress, KeyPressMask, callback_key, game);
 		mlx_loop(game->mlx);
 		free_map(map);
 		return (err_msg(ERR_OK));

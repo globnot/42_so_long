@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/02/01 14:53:54 by aborda           ###   ########.fr        #
+#    Updated: 2026/02/01 15:06:24 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ RESET		= \033[0m
 
 # Project
 NAME		= so_long
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -Wno-cast-function-type
+CC			= gcc-11
+CFLAGS		= -Wall -Wextra -Werror
 INCLUDES	= -Iincludes -I./libft/includes -I$(MLX_DIR)
 
 #MINILIBX
