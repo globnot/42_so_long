@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/02/01 11:26:26 by aborda           ###   ########.fr        #
+#    Updated: 2026/02/01 12:43:19 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RESET		= \033[0m
 # Project
 NAME		= so_long
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -Wno-cast-function-type
 INCLUDES	= -Iincludes -I./libft/includes -I$(MLX_DIR)
 
 #MINILIBX
@@ -43,8 +43,7 @@ SRCS		= srcs/main.c \
 			  srcs/flood/init_nb_collectible.c \
 			  srcs/flood/init_player_pos.c \
 			  srcs/flood/init_s_flood.c \
-			  srcs/game/callback_cross.c \
-			  srcs/game/callback_key.c \
+			  srcs/game/callback.c \
 			  srcs/game/close_game.c \
 			  srcs/game/init_img.c \
 			  srcs/game/init_s_game.c \
