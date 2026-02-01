@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/01 14:17:27 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/01 14:53:32 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 # include "errors.h"
-# include <mlx.h>
+# include <../minilibx/mlx.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
 
