@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 11:52:26 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 08:37:57 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:06:21 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,43 @@ int	callback_key(int keycode, void *param)
 	}
 	if (keycode == KEY_W)
 	{
+		if (is_valid_next(game, game->player_x, game->player_y - 1))
+		{
+			game->player_y--;
+			game->move++;
+			ft_printf("MOVES : %d\n", game->move);
+			render_map(game);
+		}
 	}
 	if (keycode == KEY_A)
 	{
+		if (is_valid_next(game, game->player_x - 1, game->player_y))
+		{
+			game->player_x--;
+			game->move++;
+			ft_printf("MOVES : %d\n", game->move);
+			render_map(game);
+		}
 	}
 	if (keycode == KEY_S)
 	{
+		if (is_valid_next(game, game->player_x, game->player_y + 1))
+		{
+			game->player_y++;
+			game->move++;
+			ft_printf("MOVES : %d\n", game->move);
+			render_map(game);
+		}
 	}
 	if (keycode == KEY_D)
 	{
+		if (is_valid_next(game, game->player_x + 1, game->player_y))
+		{
+			game->player_x++;
+			game->move++;
+			ft_printf("MOVES : %d\n", game->move);
+			render_map(game);
+		}
 	}
 	return (0);
 }

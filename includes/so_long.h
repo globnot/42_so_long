@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 09:57:39 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 10:56:34 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_game
 	int		tile_size;
 	int		player_x;
 	int		player_y;
+	int		move;
 	t_map	*map;
 	void	*mlx;
 	void	*win;
@@ -83,6 +84,7 @@ int		callback_cross(void *param);
 int		callback_key(int keycode, void *param);
 void	free_game(t_game *game);
 t_game	*init_s_game(t_map *map);
+int		is_valid_next(t_game *game, int pos_x, int pos_y);
 int		render_map(t_game *game);
 
 //MAP

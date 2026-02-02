@@ -6,11 +6,25 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 10:00:47 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:03:47 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	init_game_value(t_game *game)
+{
+	game->title = "Coquillette";
+	game->tile_size = 64;
+	game->move = 0;
+	game->mlx = NULL;
+	game->win = NULL;
+	game->img_wall = NULL;
+	game->img_floor = NULL;
+	game->img_collectible = NULL;
+	game->img_exit = NULL;
+	game->img_player = NULL;
+}
 
 static int	init_img(t_game *game)
 {
@@ -53,18 +67,10 @@ t_game	*init_s_game(t_map *map)
 	game = malloc(sizeof(t_game));
 	if (game == NULL)
 		return (NULL);
+	init_game_value(game);
 	game->map = map;
-	game->title = "Coquillette";
-	game->tile_size = 64;
 	if (!init_player_pos_game(game, map))
 		return (free_game(game), NULL);
-	game->mlx = NULL;
-	game->win = NULL;
-	game->img_wall = NULL;
-	game->img_floor = NULL;
-	game->img_collectible = NULL;
-	game->img_exit = NULL;
-	game->img_player = NULL;
 	game->mlx = mlx_init();
 	if (game->mlx == NULL)
 		return (free_game(game), NULL);
