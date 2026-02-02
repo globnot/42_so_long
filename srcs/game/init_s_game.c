@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 08:50:32 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 09:31:55 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_game	*init_s_game(t_map *map)
 		return (NULL);
 	game->title = "Coquillette";
 	game->tile_size = 64;
+	if (!init_player_pos_game(game, map))
+		return (NULL);
 	game->map = map;
 	game->mlx = NULL;
 	game->win = NULL;
