@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 09:05:47 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 09:28:46 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@
 # define DIR_EXIT			"textures/exit.xpm"
 # define DIR_PLAYER			"textures/player.xpm"
 
-# define KEY_W				119
-# define KEY_A				97
-# define KEY_S				115
-# define KEY_D				100
-
-# define KEY_ESC  			65307
+typedef enum e_key
+{
+	KEY_W =		119,
+	KEY_A =		97,
+	KEY_S =		115,
+	KEY_D =		100,
+	KEY_ESC =	65307
+}	t_key;
 
 typedef struct s_map
 {
