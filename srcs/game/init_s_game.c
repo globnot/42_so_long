@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 12:03:16 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 12:08:32 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	init_game_value(t_game *game)
 	game->img_floor = NULL;
 	game->img_collectible = NULL;
 	game->img_close_exit = NULL;
+	game->img_open_exit = NULL;
 	game->img_player = NULL;
 }
 

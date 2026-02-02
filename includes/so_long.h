@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 12:02:24 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 12:08:18 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define DIR_FLOOR			"textures/floor.xpm"
 # define DIR_COL			"textures/collectible.xpm"
 # define DIR_CLOSE_EXIT		"textures/close_exit.xpm"
+# define DIR_OPEN_EXIT		"textures/open_exit.xpm"
 # define DIR_PLAYER			"textures/player.xpm"
 
 typedef enum e_key
@@ -69,6 +70,7 @@ typedef struct s_game
 	void	*img_floor;
 	void	*img_collectible;
 	void	*img_close_exit;
+	void	*img_open_exit;
 	void	*img_player;
 }	t_game;
 
