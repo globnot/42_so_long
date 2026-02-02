@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:50:29 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 08:58:21 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:18:09 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ t_flood	*init_s_flood(t_map *map)
 		return (free(flood), NULL);
 	if (!init_player_pos_flood(flood, map))
 		return (free_flood(flood), NULL);
-	init_nb_collectible(flood, map);
+	flood->nb_collectible = count_collectible(map);
 	return (flood);
 }

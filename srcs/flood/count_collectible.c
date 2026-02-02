@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_nb_collectible.c                              :+:      :+:    :+:   */
+/*   count_collectible.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 16:06:00 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/29 16:14:07 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:13:41 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	init_nb_collectible(t_flood *flood, t_map *map)
+int	count_collectible(t_map *map)
 {
 	int		i;
 	size_t	j;
@@ -31,6 +31,5 @@ int	init_nb_collectible(t_flood *flood, t_map *map)
 		}
 		i++;
 	}
-	flood->nb_collectible = count;
-	return (1);
+	return (count);
 }
