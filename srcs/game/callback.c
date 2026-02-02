@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 11:52:26 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 11:36:46 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 13:30:51 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ int	callback_key(int keycode, void *param)
 				game->map->map_array[game->player_y][game->player_x] = '0';
 				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
 			}
+			if(game->map->map_array[game->player_y][game->player_x] == 'E')
+			{
+				if (game->remaining_collectible == 0)
+					ft_printf("WIN\n");
+				else
+					ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+			}
 			ft_printf("MOVES : %d\n", game->move);
 			render_map(game);
 		}
@@ -59,6 +66,15 @@ int	callback_key(int keycode, void *param)
 				game->remaining_collectible--;
 				game->map->map_array[game->player_y][game->player_x] = '0';
 				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+			}
+			if(game->map->map_array[game->player_y][game->player_x] == 'E')
+			{
+				if (game->remaining_collectible == 0)
+				{
+					ft_printf("WIN\n");
+				}
+				else
+					ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
 			}
 			ft_printf("MOVES : %d\n", game->move);
 			render_map(game);
@@ -76,6 +92,15 @@ int	callback_key(int keycode, void *param)
 				game->map->map_array[game->player_y][game->player_x] = '0';
 				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
 			}
+			if(game->map->map_array[game->player_y][game->player_x] == 'E')
+			{
+				if (game->remaining_collectible == 0)
+				{
+					ft_printf("WIN\n");
+				}
+				else
+					ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+				}
 			ft_printf("MOVES : %d\n", game->move);
 			render_map(game);
 		}
@@ -91,6 +116,15 @@ int	callback_key(int keycode, void *param)
 				game->remaining_collectible--;
 				game->map->map_array[game->player_y][game->player_x] = '0';
 				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+			}
+			if(game->map->map_array[game->player_y][game->player_x] == 'E')
+			{
+				if (game->remaining_collectible == 0)
+				{
+					ft_printf("WIN\n");
+				}
+				else
+					ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
 			}
 			ft_printf("MOVES : %d\n", game->move);
 			render_map(game);
