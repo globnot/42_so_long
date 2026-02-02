@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 11:52:26 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 11:22:53 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:36:46 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,13 @@ int	callback_key(int keycode, void *param)
 		{
 			game->player_y--;
 			game->move++;
+			if(game->map->map_array[game->player_y][game->player_x] == 'C')
+			{
+				game->remaining_collectible--;
+				game->map->map_array[game->player_y][game->player_x] = '0';
+				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+			}
 			ft_printf("MOVES : %d\n", game->move);
-			ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
 			render_map(game);
 		}
 	}
@@ -49,6 +54,12 @@ int	callback_key(int keycode, void *param)
 		{
 			game->player_x--;
 			game->move++;
+			if(game->map->map_array[game->player_y][game->player_x] == 'C')
+			{
+				game->remaining_collectible--;
+				game->map->map_array[game->player_y][game->player_x] = '0';
+				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+			}
 			ft_printf("MOVES : %d\n", game->move);
 			render_map(game);
 		}
@@ -59,6 +70,12 @@ int	callback_key(int keycode, void *param)
 		{
 			game->player_y++;
 			game->move++;
+			if(game->map->map_array[game->player_y][game->player_x] == 'C')
+			{
+				game->remaining_collectible--;
+				game->map->map_array[game->player_y][game->player_x] = '0';
+				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+			}
 			ft_printf("MOVES : %d\n", game->move);
 			render_map(game);
 		}
@@ -69,6 +86,12 @@ int	callback_key(int keycode, void *param)
 		{
 			game->player_x++;
 			game->move++;
+			if(game->map->map_array[game->player_y][game->player_x] == 'C')
+			{
+				game->remaining_collectible--;
+				game->map->map_array[game->player_y][game->player_x] = '0';
+				ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
+			}
 			ft_printf("MOVES : %d\n", game->move);
 			render_map(game);
 		}
