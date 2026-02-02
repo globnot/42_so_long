@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 08:46:44 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 09:05:47 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <../minilibx/mlx.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
+
+# define DIR_WALL			"textures/wall.xpm"
+# define DIR_FLOOR			"textures/floor.xpm"
+# define DIR_COL			"textures/collectible.xpm"
+# define DIR_EXIT			"textures/exit.xpm"
+# define DIR_PLAYER			"textures/player.xpm"
 
 # define KEY_W				119
 # define KEY_A				97
@@ -50,6 +56,8 @@ typedef struct s_game
 {
 	char	*title;
 	int		tile_size;
+	int		player_x;
+	int		player_y;
 	t_map	*map;
 	void	*mlx;
 	void	*win;
@@ -63,7 +71,8 @@ typedef struct s_game
 //FLOOD
 t_flood	*init_s_flood(t_map *map);
 char	**init_map_copy(t_map *map, t_flood *flood);
-int		init_player_pos(t_flood *flood, t_map *map);
+int		init_player_pos_flood(t_flood *flood, t_map *map);
+int		init_player_pos_game(t_game *game, t_map *map);
 int		init_nb_collectible(t_flood *flood, t_map *map);
 int		flood_fill(t_flood *flood, size_t player_pos_x, int player_pos_y);
 

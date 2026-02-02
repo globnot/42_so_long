@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:23:24 by aborda            #+#    #+#             */
-/*   Updated: 2026/01/30 16:40:46 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 09:02:23 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	render_map(t_game *game)
 		while (j < game->map->line_len)
 		{
 			c = game->map->map_array[i][j];
-			x = j * game->size;
-			y = i * game->size;
+			x = j * game->tile_size;
+			y = i * game->tile_size;
 			render_tile(game, c, x, y);
 			j++;
 		}
