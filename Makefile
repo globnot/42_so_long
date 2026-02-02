@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/02/01 15:06:24 by aborda           ###   ########.fr        #
+#    Updated: 2026/02/02 09:58:20 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,6 @@ SRCS		= srcs/main.c \
 			  srcs/flood/init_s_flood.c \
 			  srcs/game/callback.c \
 			  srcs/game/close_game.c \
-			  srcs/game/init_img.c \
 			  srcs/game/init_s_game.c \
 			  srcs/game/render_map.c \
 			  srcs/map/init_map.c \

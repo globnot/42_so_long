@@ -6,11 +6,45 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 09:51:37 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 10:00:47 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static int	init_img(t_game *game)
+{
+	game->img_wall = mlx_xpm_file_to_image(
+			game->mlx, DIR_WALL, &game->tile_size, &game->tile_size);
+	if (game->img_wall == NULL)
+		return (0);
+	game->img_floor = mlx_xpm_file_to_image(
+			game->mlx, DIR_FLOOR, &game->tile_size, &game->tile_size);
+	if (game->img_floor == NULL)
+		return (0);
+	game->img_collectible = mlx_xpm_file_to_image(
+			game->mlx, DIR_COL, &game->tile_size, &game->tile_size);
+	if (game->img_collectible == NULL)
+		return (0);
+	game->img_exit = mlx_xpm_file_to_image(
+			game->mlx, DIR_EXIT, &game->tile_size, &game->tile_size);
+	if (game->img_exit == NULL)
+		return (0);
+	game->img_player = mlx_xpm_file_to_image(
+			game->mlx, DIR_PLAYER, &game->tile_size, &game->tile_size);
+	if (game->img_player == NULL)
+		return (0);
+	return (1);
+}
+
+static int	init_win(t_game *game)
+{
+	game->win = mlx_new_window(game->mlx, game->map->line_len * game->tile_size,
+			game->map->nb_line * game->tile_size, game->title);
+	if (game->win == NULL)
+		return (free_game(game), 0);
+	return (1);
+}
 
 t_game	*init_s_game(t_map *map)
 {
@@ -34,9 +68,7 @@ t_game	*init_s_game(t_map *map)
 	game->mlx = mlx_init();
 	if (game->mlx == NULL)
 		return (free_game(game), NULL);
-	game->win = mlx_new_window(game->mlx, game->map->line_len * game->tile_size,
-			game->map->nb_line * game->tile_size, game->title);
-	if (game->win == NULL)
+	if (!init_win(game))
 		return (free_game(game), NULL);
 	if (!init_img(game))
 		return (free_game(game), NULL);

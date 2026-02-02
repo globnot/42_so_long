@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 09:28:46 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 09:57:39 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ int		flood_fill(t_flood *flood, size_t player_pos_x, int player_pos_y);
 int		callback_cross(void *param);
 int		callback_key(int keycode, void *param);
 void	free_game(t_game *game);
-int		init_img(t_game *game);
 t_game	*init_s_game(t_map *map);
 int		render_map(t_game *game);
 
