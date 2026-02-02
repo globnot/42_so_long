@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 15:23:24 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 13:37:36 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 13:58:11 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,11 @@ static void	render_tile(t_game *game, int c, size_t x, int y)
 	if (c == 'E')
 	{
 		if (game->remaining_collectible == 0)
-		{
 			mlx_put_image_to_window(
 				game->mlx, game->win, game->img_open_exit, x, y);
-		}
 		else
-		{
 			mlx_put_image_to_window(
 				game->mlx, game->win, game->img_close_exit, x, y);
-		}
 	}
 	if (c == 'P')
 		mlx_put_image_to_window(
