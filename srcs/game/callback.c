@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 11:52:26 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 11:06:21 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:22:53 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	callback_key(int keycode, void *param)
 			game->player_y--;
 			game->move++;
 			ft_printf("MOVES : %d\n", game->move);
+			ft_printf("COFFRES RESTANTS : %d\n", game->remaining_collectible);
 			render_map(game);
 		}
 	}

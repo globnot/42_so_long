@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 14:29:16 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 11:14:22 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:20:58 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_game
 	int		player_x;
 	int		player_y;
 	int		move;
+	int		remaining_collectible;
 	t_map	*map;
 	void	*mlx;
 	void	*win;

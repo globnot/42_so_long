@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 11:03:47 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 11:22:08 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ t_game	*init_s_game(t_map *map)
 	if (game == NULL)
 		return (NULL);
 	init_game_value(game);
+	game->remaining_collectible = count_collectible(map);
 	game->map = map;
 	if (!init_player_pos_game(game, map))
 		return (free_game(game), NULL);
