@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/02/02 11:16:29 by aborda           ###   ########.fr        #
+#    Updated: 2026/02/02 14:45:03 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ OBJ_DIR		= objs
 SRCS		= srcs/main.c \
 			  srcs/flood/flood_fill.c \
 			  srcs/flood/init_map_copy.c \
-			  srcs/flood/count_collectible.c \
 			  srcs/flood/init_player_pos.c \
 			  srcs/flood/init_s_flood.c \
 			  srcs/game/callback.c \
@@ -57,6 +56,7 @@ SRCS		= srcs/main.c \
 			  srcs/validation/check_format.c \
 			  srcs/validation/check_path.c \
 			  srcs/validation/is_valid_map.c \
+			  srcs/utils/count_collectible.c \
 			  srcs/errors/errors.c
 
 # Objects
