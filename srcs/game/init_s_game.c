@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 09:31:55 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 09:51:37 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ t_game	*init_s_game(t_map *map)
 	game = malloc(sizeof(t_game));
 	if (game == NULL)
 		return (NULL);
+	game->map = map;
 	game->title = "Coquillette";
 	game->tile_size = 64;
 	if (!init_player_pos_game(game, map))
-		return (NULL);
-	game->map = map;
+		return (free_game(game), NULL);
 	game->mlx = NULL;
 	game->win = NULL;
 	game->img_wall = NULL;
