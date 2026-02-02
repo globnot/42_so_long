@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 11:22:08 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/02 12:03:16 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	init_game_value(t_game *game)
 	game->img_wall = NULL;
 	game->img_floor = NULL;
 	game->img_collectible = NULL;
-	game->img_exit = NULL;
+	game->img_close_exit = NULL;
 	game->img_player = NULL;
 }
 
@@ -40,9 +40,9 @@ static int	init_img(t_game *game)
 			game->mlx, DIR_COL, &game->tile_size, &game->tile_size);
 	if (game->img_collectible == NULL)
 		return (0);
-	game->img_exit = mlx_xpm_file_to_image(
-			game->mlx, DIR_EXIT, &game->tile_size, &game->tile_size);
-	if (game->img_exit == NULL)
+	game->img_close_exit = mlx_xpm_file_to_image(
+			game->mlx, DIR_CLOSE_EXIT, &game->tile_size, &game->tile_size);
+	if (game->img_close_exit == NULL)
 		return (0);
 	game->img_player = mlx_xpm_file_to_image(
 			game->mlx, DIR_PLAYER, &game->tile_size, &game->tile_size);
