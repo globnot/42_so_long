@@ -11,7 +11,7 @@ echo -e "${Y}     TESTS VALIDES${NC}"
 echo -e "${Y}=======================================${NC}"
 
 echo -e "${B}MAP VALIDE MAP${NC}"
-./so_long "maps/valid_map.ber"
+./so_long "maps/valid_42.ber"
 echo -e "RETURN: ${R}$?${NC}"
 
 echo -e "${B}MAP VALIDE SIMPLE${NC}"
