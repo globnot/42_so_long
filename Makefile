@@ -6,7 +6,7 @@
 #    By: aborda <aborda@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/22 10:21:17 by aborda            #+#    #+#              #
-#    Updated: 2026/02/02 14:45:03 by aborda           ###   ########.fr        #
+#    Updated: 2026/02/07 08:18:04 by aborda           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ RESET		= \033[0m
 
 # Project
 NAME		= so_long
-CC			= gcc-11
+# CC			= gcc-11
+CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 INCLUDES	= -Iincludes -I./libft/includes -I$(MLX_DIR)
 
