@@ -43,11 +43,17 @@
 
 ### Compilation
 
+**Racine du projet**
 ```bash
 make
 ```
 
 Cette commande génère l'exécutable `so_long`
+
+**Dans le dossier minilinx**
+```bash
+make
+```
 
 ### Utilisation
 
