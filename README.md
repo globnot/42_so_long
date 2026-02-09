@@ -41,6 +41,20 @@
 - **MiniLibX** (incluse dans le projet)
 - Système X11 (Linux)
 
+### Cloner le projet
+
+Le projet utilise **libft** en tant que submodule Git. Pour cloner correctement :
+
+```bash
+git clone --recursive <url_du_repo>
+```
+
+Ou si le repo est déjà cloné sans les submodules :
+
+```bash
+git submodule update --init --recursive
+```
+
 ### Compilation
 
 **Racine du projet**
