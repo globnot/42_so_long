@@ -6,7 +6,7 @@
 /*   By: aborda <aborda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 12:32:18 by aborda            #+#    #+#             */
-/*   Updated: 2026/02/02 13:34:10 by aborda           ###   ########.fr       */
+/*   Updated: 2026/02/07 11:58:27 by aborda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	init_win(t_game *game)
 	game->win = mlx_new_window(game->mlx, game->map->line_len * game->tile_size,
 			game->map->nb_line * game->tile_size, game->title);
 	if (game->win == NULL)
-		return (free_game(game), 0);
+		return (0);
 	return (1);
 }
 

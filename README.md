@@ -36,7 +36,7 @@
 
 ### Prérequis
 
-- `gcc`
+- `gcc 11 ou inferieur`
 - `make`
 - **MiniLibX** (incluse dans le projet)
 - Système X11 (Linux)
